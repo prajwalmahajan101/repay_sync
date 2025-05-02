@@ -1,0 +1,11 @@
+name,phone_number,email,address,collection_officer_username,is_active
+Robert Thompson,+1-555-0101,robert.t@email.com,123 Main St Apt 4B New York NY 10001,mike.field,true
+Maria Garcia,+1-555-0102,m.garcia@email.com,456 Oak Ave Unit 7 Los Angeles CA 90012,alex.field,true
+David Williams,+1-555-0103,d.williams@email.com,789 Pine St Chicago IL 60601,emma.field,true
+Jennifer Lee,+1-555-0104,jen.lee@email.com,321 Maple Dr Houston TX 77001,james.field,false
+Michael Brown,+1-555-0105,m.brown@email.com,654 Cedar Ln Miami FL 33101,mike.field,true
+Susan Martinez,+1-555-0106,s.martinez@email.com,987 Birch Rd Seattle WA 98101,alex.field,true
+Thomas Anderson,+1-555-0107,t.anderson@email.com,147 Elm St Boston MA 02101,emma.field,true
+Patricia Taylor,+1-555-0108,p.taylor@email.com,258 Willow Ave Denver CO 80201,james.field,true
+Kevin Wright,+1-555-0109,k.wright@email.com,369 Spruce Ct Phoenix AZ 85001,mike.field,true
+Linda Scott,+1-555-0110,l.scott@email.com,741 Ash St Portland OR 97201,alex.field,false 

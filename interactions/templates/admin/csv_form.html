@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module">
+        <h2>Import Interactions from CSV</h2>
+        <div class="form-row">
+            <p class="help">
+                Please ensure your CSV file has the following columns:
+                <ul>
+                    <li><strong>customer_id</strong> (required): The ID of the customer</li>
+                    <li><strong>disposition</strong> (required): One of the valid disposition choices (PROMISE_TO_PAY, NOT_REACHABLE, WRONG_NUMBER, REFUSED_TO_PAY, PARTIAL_PAYMENT, FULL_PAYMENT, CALL_BACK, OTHER)</li>
+                    <li><strong>comment</strong> (required): The interaction comment</li>
+                    <li><strong>next_call_date</strong> (optional): In YYYY-MM-DD HH:MM:SS format</li>
+                </ul>
+            </p>
+        </div>
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                {{ form.as_p }}
+            </div>
+            <div class="submit-row">
+                <input type="submit" class="default" value="Upload CSV">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 

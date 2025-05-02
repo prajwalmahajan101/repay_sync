@@ -1,0 +1,10 @@
+username,email,role,first_name,last_name,parent_username
+john.manager,john@company.com,SUPER_MANAGER,John,Smith,
+sarah.team,sarah@company.com,MANAGER,Sarah,Johnson,john.manager
+mike.field,mike@company.com,COLLECTION_OFFICER,Mike,Wilson,sarah.team
+alex.field,alex@company.com,COLLECTION_OFFICER,Alex,Brown,sarah.team
+lisa.calls,lisa@company.com,CALLING_AGENT,Lisa,Davis,
+peter.team,peter@company.com,MANAGER,Peter,Anderson,john.manager
+emma.field,emma@company.com,COLLECTION_OFFICER,Emma,Taylor,peter.team
+james.field,james@company.com,COLLECTION_OFFICER,James,Miller,peter.team
+anna.calls,anna@company.com,CALLING_AGENT,Anna,White,

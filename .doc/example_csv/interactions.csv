@@ -1,0 +1,11 @@
+customer_id,disposition,comment,next_call_date,interaction_type
+1,PROMISE_TO_PAY,Customer agreed to pay $500 next week,2025-07-15 10:00:00,CALL
+2,CALL_BACK,Customer requested callback after reviewing payment options,2025-07-12 14:00:00,CALL
+3,NOT_REACHABLE,No response - voicemail left,2025-07-14 09:00:00,CALL
+4,PARTIAL_PAYMENT,Customer made partial payment of $200,2025-07-18 11:00:00,FIELD
+5,PROMISE_TO_PAY,Customer agreed to payment plan starting next week,2025-07-20 15:30:00,CALL
+6,CALL_BACK,Customer requested payment extension - needs to discuss with spouse,2025-07-17 16:00:00,CALL
+7,PROMISE_TO_PAY,Customer accepted settlement offer of 70%,2025-07-16 10:00:00,FIELD
+8,PARTIAL_PAYMENT,Customer paid $500 towards outstanding balance,2025-07-25 13:00:00,FIELD
+9,WRONG_NUMBER,Phone number no longer in service,2025-07-19 09:00:00,CALL
+10,FULL_PAYMENT,Customer completed final payment - account to be closed,,CALL 

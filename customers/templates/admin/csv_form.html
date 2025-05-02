@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <div>
+        <form action="." method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="module aligned">
+                {% for field in form %}
+                    <div class="form-row">
+                        {{ field.errors }}
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <div class="submit-row">
+                <input type="submit" value="Upload CSV" class="default" name="_save">
+            </div>
+        </form>
+    </div>
+    <br/>
+    <div>
+        <h2>CSV Format Instructions</h2>
+        <p>The CSV file should contain the following columns:</p>
+        <ul>
+            <li><strong>name</strong> (required): Customer's full name</li>
+            <li><strong>phone_number</strong> (required): Customer's phone number</li>
+            <li><strong>email</strong> (optional): Customer's email address</li>
+            <li><strong>address</strong> (required): Customer's address</li>
+            <li><strong>collection_officer_username</strong> (optional): Username of the collection officer to assign</li>
+        </ul>
+    </div>
+{% endblock %} 

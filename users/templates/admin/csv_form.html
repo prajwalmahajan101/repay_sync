@@ -1,0 +1,40 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <div>
+        <form action="." method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <fieldset class="module aligned">
+                <h2>Import Users from CSV</h2>
+                
+                <div class="form-row">
+                    {{ form.as_p }}
+                </div>
+                
+                <div class="help">
+                    <h3>CSV Format Requirements:</h3>
+                    <ul>
+                        <li>Required columns: username, email, role</li>
+                        <li>Optional columns: first_name, last_name, parent_username</li>
+                        <li>Available roles: SUPER_MANAGER, MANAGER, COLLECTION_OFFICER, CALLING_AGENT</li>
+                        <li>parent_username must be an existing user's username</li>
+                        <li>File must be in CSV format with UTF-8 encoding</li>
+                    </ul>
+                    
+                    <h3>Example CSV:</h3>
+                    <pre>
+username,email,role,first_name,last_name,parent_username
+john.doe,john@example.com,MANAGER,John,Doe,admin.user
+jane.smith,jane@example.com,COLLECTION_OFFICER,Jane,Smith,john.doe
+                    </pre>
+                </div>
+            </fieldset>
+            
+            <div class="submit-row">
+                <input type="submit" value="Upload CSV" class="default" />
+            </div>
+        </form>
+    </div>
+{% endblock %} 

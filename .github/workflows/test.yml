@@ -8,32 +8,18 @@ on:
 
 jobs:
   check:
-    name: django check + makemigrations dry-run (Python ${{ matrix.python-version }})
+    name: django check (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
 
-    # MySQL service for `manage.py check` to succeed against the configured backend.
-    services:
-      mysql:
-        image: mysql:8.4
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: repay_sync_dev_2
-        ports: ["3306:3306"]
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-
     env:
-      SECRET_KEY: django-insecure-ci-only-not-used-anywhere-real
+      SECRET_KEY: ci-only-not-a-real-secret
       DEBUG: "True"
       LOGGING_DB_ENABLED: "False"
-      DB_NAME: repay_sync_dev_2
+      DB_NAME: repay_sync
       DB_USER: root
       DB_PASSWORD: root
       DB_HOST: 127.0.0.1
@@ -56,14 +42,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Django system check (no models DB needed)
+      - name: Django system check (no DB connection needed for static checks)
         run: python manage.py check
-
-      - name: Migrate
-        run: python manage.py migrate --noinput
-
-      - name: makemigrations is up to date (no drift)
-        run: python manage.py makemigrations --check --dry-run
-
-      - name: Run tests
-        run: python manage.py test

@@ -1,5 +1,7 @@
 # repay_sync
 
+[![test](https://github.com/prajwalmahajan101/repay_sync/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/prajwalmahajan101/repay_sync/actions/workflows/test.yml)
+
 A small Django 5 + DRF service exploring the data model and workflow behind loan-repayment collection — the operational layer collection officers and supervisors actually use.
 
 ## What it covers
